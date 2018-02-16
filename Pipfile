@@ -12,3 +12,4 @@ name = "pypi"
 [packages]
 
 "psycopg2" = "*"
+django = "*"
