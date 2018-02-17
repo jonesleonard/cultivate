@@ -49,7 +49,11 @@ class GardenAddress(models.Model):
         verbose_name='the related address type',
     )
     address = models.CharField('street address', max_length=255, blank=True)
-    zip_code = models.ForeignKey(ZipCode)
+    zip_code = models.ForeignKey(
+        ZipCode,
+        on_delete=models.CASCADE,
+        verbose_name='the related garden address',
+    )
 
 
 class Garden(models.Model):
