@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'hansberry.wsgi.application'
+WSGI_APPLICATION = 'hansberry.config.wsgi.application'
 
 
 # Database
