@@ -29,7 +29,7 @@ class City(models.Model):
     state = models.ForeignKey(
         State,
         on_delete=models.CASCADE,
-        verbose_name='the related city',
+        verbose_name='the related state',
     )
 
 
@@ -38,7 +38,7 @@ class ZipCode(models.Model):
     city = models.ForeignKey(
         City,
         on_delete=models.CASCADE,
-        verbose_name='the related zip code',
+        verbose_name='the related city',
     )
 
 
@@ -52,7 +52,7 @@ class GardenAddress(models.Model):
     zip_code = models.ForeignKey(
         ZipCode,
         on_delete=models.CASCADE,
-        verbose_name='the related garden address',
+        verbose_name='the related zip code',
     )
 
 
@@ -62,5 +62,5 @@ class Garden(models.Model):
     address = models.ForeignKey(
         GardenAddress,
         on_delete=models.CASCADE,
-        verbose_name='the related garden',
+        verbose_name='the related garden address',
     )
