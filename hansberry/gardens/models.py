@@ -1,9 +1,15 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.utils import timezone
 from django.template.defaultfilters import slugify
 
 
 # Create your models here.
 class GardenAddressType(models.Model):
+    """
+    Stores the type of address a garden address entry is, related to :model:'gardens.GardenAddress' and
+    :model:'gardens.Garden',
+    """
     ADDRESS_PHYSICAL = 'py'
     ADDRESS_MAILING = 'ml'
 
@@ -20,18 +26,29 @@ class GardenAddressType(models.Model):
     )
 
     def __str__(self):
-        return self.ADDRESS_CHOICES
+        return self.get_address_type_display()
 
 
 class State(models.Model):
+    """
+    Stores a single US State entry
+    """
     short_name = models.CharField('state short name', max_length=2, primary_key=True)
     name = models.CharField('state full name', max_length=50)
 
+    def save(self, *args, **kwargs):
+        self.short_name = self.short_name.upper()
+        self.name = self.name.title()
+        super(State, self).save(*args, **kwargs)
+
     def __str__(self):
-        return self.name.upper()
+        return self.name
 
 
 class City(models.Model):
+    """
+    Stores a single US City entry, related to :model:'gardens.State'
+    """
     name = models.CharField('city name', max_length=100)
     state = models.ForeignKey(
         State,
@@ -44,6 +61,9 @@ class City(models.Model):
 
 
 class ZipCode(models.Model):
+    """
+    Stores zip code data, related to :model:'gardens.city'
+    """
     code = models.CharField('zip code', max_length=6)
     city = models.ForeignKey(
         City,
@@ -59,6 +79,10 @@ class ZipCode(models.Model):
 
 
 class GardenAddress(models.Model):
+    """
+    Stores a garden address entry tied to each garden, related to :model:'gardens.Garden',
+    :model:'gardens.GardenAddressType', and :model:'gardens.ZipCode'
+    """
     address_type = models.ForeignKey(
         GardenAddressType,
         on_delete=models.CASCADE,
@@ -76,6 +100,16 @@ class GardenAddress(models.Model):
 
 
 class Garden(models.Model):
+    """
+    Stores a single Garden entry, related to :model:'gardens.GardenAddress',
+    :model:'gardens.GardenAddressType'
+    """
+    garden_author = models.ForeignKey(User)
+    description = models.CharField(max_length=300)
+    created_date = models.DateTimeField(verbose_name='date garden was created in database', auto_now_add=True,
+                                        name='date created')
+    timestamp = models.DateTimeField(verbose_name='last date the garden entry was updated', auto_now=True,
+                                     name='timestamp')
     name = models.CharField('name of garden', max_length=100)
     slug = models.SlugField()
     address = models.ForeignKey(
