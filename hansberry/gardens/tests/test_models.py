@@ -12,9 +12,20 @@ class GardenTestCase(TestCase):
             address_type=self.gardenaddresstype_py,
             address='5150 Wayne Avenue',
             zip_code=self.zip_germantown)
-
-    def test_garden_name(self):
-        hansberry_garden, created = Garden.objects.get_or_create(name='Hansberry Garden and Nature Center',
+        self.hansberry_garden, created = Garden.objects.get_or_create(name='Hansberry Garden and Nature Center',
                                                                  slug='hgnc',
                                                                  address=self.gardenaddress_hansberry)
-        self.assertEqual(hansberry_garden.name, 'Hansberry Garden and Nature Center')
+    def test_garden_name_label(self):
+        field_label = self.hansberry_garden._meta.get_field('name').verbose_name
+        self.assertEquals(field_label, 'name of garden')
+
+
+    def test_garden_address_label(self):
+        field_label = self.hansberry_garden._meta.get_field('address').verbose_name
+        self.assertEquals(field_label, 'the related garden address')
+
+    def test_slug_field(self):
+        
+
+    def test_garden_name(self):
+        self.assertEqual(self.hansberry_garden.name, 'Hansberry Garden and Nature Center')

@@ -73,12 +73,16 @@ class GardenAddress(models.Model):
 
 class Garden(models.Model):
     name = models.CharField('name of garden', max_length=100)
-    slug = models.SlugField(max_length=40)
+    slug = models.SlugField()
     address = models.ForeignKey(
         GardenAddress,
         on_delete=models.CASCADE,
         verbose_name='the related garden address',
     )
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(Garden, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.name
