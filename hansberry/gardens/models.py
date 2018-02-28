@@ -18,10 +18,16 @@ class GardenAddressType(models.Model):
         default=ADDRESS_PHYSICAL
     )
 
+    def __str__(self):
+        return self.ADDRESS_CHOICES
+
 
 class State(models.Model):
     short_name = models.CharField('state short name', max_length=2, primary_key=True)
     name = models.CharField('state full name', max_length=50)
+
+    def __str__(self):
+        return self.name.upper()
 
 
 class City(models.Model):
@@ -32,6 +38,9 @@ class City(models.Model):
         verbose_name='the related state',
     )
 
+    def __str__(self):
+        return self.name
+
 
 class ZipCode(models.Model):
     code = models.CharField('zip code', max_length=6)
@@ -40,6 +49,9 @@ class ZipCode(models.Model):
         on_delete=models.CASCADE,
         verbose_name='the related city',
     )
+
+    def __str__(self):
+        return self.code
 
 
 class GardenAddress(models.Model):
@@ -55,6 +67,9 @@ class GardenAddress(models.Model):
         verbose_name='the related zip code',
     )
 
+    def __str__(self):
+        return self.address
+
 
 class Garden(models.Model):
     name = models.CharField('name of garden', max_length=100)
@@ -64,3 +79,6 @@ class Garden(models.Model):
         on_delete=models.CASCADE,
         verbose_name='the related garden address',
     )
+
+    def __str__(self):
+        return self.name
