@@ -1,4 +1,5 @@
 from django.db import models
+from django.template.defaultfilters import slugify
 
 
 # Create your models here.
@@ -68,7 +69,7 @@ class GardenAddress(models.Model):
     )
 
     def __str__(self):
-        return self.address
+        return '%s, %s, %s %s'.format(self.address, self.zip_code.city, self.zip_code.city.state, self.zip_code)
 
 
 class Garden(models.Model):
@@ -79,6 +80,9 @@ class Garden(models.Model):
         on_delete=models.CASCADE,
         verbose_name='the related garden address',
     )
+
+    class Meta:
+        unique_together = (('address', 'name'),)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
