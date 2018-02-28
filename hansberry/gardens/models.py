@@ -51,6 +51,9 @@ class ZipCode(models.Model):
         verbose_name='the related city',
     )
 
+    class Meta:
+        unique_together = (('code', 'city'),)
+
     def __str__(self):
         return self.code
 

@@ -47,6 +47,18 @@ class GardenModelTest(TestCase):
             Garden.objects.create(name='Hansberry Garden and Nature Center',
                                   address=self.gardenaddress_hansberry)
 
+    def test_ok_to_create_garden_with_diff_address_same_name(self):
+        """Ensure you can create a garden with an existing name but different address"""
+        test_zip, created = ZipCode.objects.get_or_create(code='19154', city=self.city_philly)
+        diff_garden_add, created = GardenAddress.objects.get_or_create(
+            address_type=self.gardenaddresstype_py,
+            address='4231 Feasterville Road',
+            zip_code=test_zip
+        )
+        garden_same_name_diff_add, created = Garden.objects.get_or_create(name='Hansberry Garden and Nature Center',
+                                                                 address=diff_garden_add)
+        self.assertEquals(garden_same_name_diff_add.name, 'Hansberry Garden and Nature Center')
+
 
 class GardenAddressModel(TestCase):
     def setUp(self):
@@ -90,3 +102,38 @@ class GardenAddressModel(TestCase):
         gardenaddress = GardenAddress.objects.get(address='5150 Wayne Avenue')
         max_length = gardenaddress._meta.get_field('address').max_length
         self.assertEquals(max_length, 255)
+
+
+class ZipCodeModel(TestCase):
+    def setUp(self):
+        self.state_pa, created = State.objects.get_or_create(short_name='PA', name='Pennsylvania')
+        self.city_philly, created = City.objects.get_or_create(name='Philadelphia', state=self.state_pa)
+        self.zip_germantown, created = ZipCode.objects.get_or_create(code='19144', city=self.city_philly)
+
+    def test_code_label(self):
+        """Test that the correct verbose name is returned"""
+        test_zip = ZipCode.objects.get(code='19144')
+        field_label = test_zip._meta.get_field('code').verbose_name
+        self.assertEquals(field_label, 'zip code')
+
+    def test_code_max_length(self):
+        """Test that the correct max length is returned"""
+        test_zip = ZipCode.objects.get(code='19144')
+        max_length = test_zip._meta.get_field('code').max_length
+        self.assertEquals(max_length, 6)
+
+    def test_calling_zip_returns_its_code(self):
+        """Test that ZipCode's str method returns the zip code"""
+        test_zip = ZipCode.objects.get(code='19144')
+        zip_code = test_zip.code
+        self.assertEquals(str(test_zip), zip_code)
+
+    def test_city_label(self):
+        test_zip = ZipCode.objects.get(code='19144')
+        field_label = test_zip._meta.get_field('city').verbose_name
+        self.assertEquals(field_label, 'the related city')
+
+    def test_unique(self):
+        """Test that a zip code can't have more than one city"""
+        with self.assertRaises(IntegrityError):
+            ZipCode.objects.create(code='19144', city=self.city_philly)
