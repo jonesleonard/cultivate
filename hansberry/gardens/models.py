@@ -104,7 +104,7 @@ class Garden(models.Model):
     Stores a single Garden entry, related to :model:'gardens.GardenAddress',
     :model:'gardens.GardenAddressType'
     """
-    garden_author = models.ForeignKey(User)
+    garden_author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     description = models.CharField(max_length=300)
     created_date = models.DateTimeField(verbose_name='date garden was created in database', auto_now_add=True,
                                         name='date created')
