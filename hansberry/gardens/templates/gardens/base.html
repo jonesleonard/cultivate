@@ -18,6 +18,9 @@
         <!-- Custom CSS -->
         <link href="{% static 'gardens/css/main.css' %}" rel="stylesheet">
 
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
     </head>
     <body>
         <div id="wrapper">
@@ -26,7 +29,10 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a class="navbar-brand" href="{% url 'index' %}">cultivate</a>
+                    <a class="navbar-brand" href="{% url 'index' %}">
+                        <img src="{% static 'gardens/images/sprout_icon.png' %}" width="30" height="30" class="d-inline-block align-top" alt="cultivate icon">
+                        cultivate
+                    </a>
                     <form class="form-inline">
                         <button class="btn btn-outline-primary mr-sm-2" type="button">Log In</button>
                         <button class="btn btn-outline-success" type="button">Sign Up</button>
