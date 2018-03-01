@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2ddebef-569d-436d-be92-71d562db6e26" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/templates/gardens/base.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/templates/gardens/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/static/gardens/css/main.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/static/gardens/images/sprout_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/tests/test_templates.py" />
       <change beforePath="$PROJECT_DIR$/../hansberry_project/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../hansberry_project/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/views.py" afterPath="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/views.py" />
-      <change beforePath="$PROJECT_DIR$/../hansberry_project/hansberry/templates/base.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../hansberry_project/Pipfile" afterPath="$PROJECT_DIR$/../hansberry_project/Pipfile" />
+      <change beforePath="$PROJECT_DIR$/../hansberry_project/Pipfile.lock" afterPath="$PROJECT_DIR$/../hansberry_project/Pipfile.lock" />
+      <change beforePath="$PROJECT_DIR$/../hansberry_project/hansberry/config/settings/base.py" afterPath="$PROJECT_DIR$/../hansberry_project/hansberry/config/settings/base.py" />
+      <change beforePath="$PROJECT_DIR$/../hansberry_project/hansberry/config/settings/test.py" afterPath="$PROJECT_DIR$/../hansberry_project/hansberry/config/settings/test.py" />
+      <change beforePath="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/templates/gardens/base.html" afterPath="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/templates/gardens/base.html" />
+      <change beforePath="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/templates/gardens/index.html" afterPath="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/templates/gardens/index.html" />
+      <change beforePath="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/urls.py" afterPath="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/urls.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,12 +23,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/views.py">
+      <file leaf-file-name="test_models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/tests/test_models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="36" lean-forward="false" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
-              <folding />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -30,8 +38,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+            <state relative-caret-position="180">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -42,9 +50,31 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/templates/gardens/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="26" lean-forward="false" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+            <state relative-caret-position="525">
+              <caret line="43" column="303" lean-forward="false" selection-start-line="43" selection-start-column="303" selection-end-line="43" selection-end-column="303" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/tests/test_views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_templates.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/tests/test_templates.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -52,8 +82,38 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/templates/gardens/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+            <state relative-caret-position="165">
+              <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/static/gardens/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="local.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/config/settings/local.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="9" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/config/settings/base.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -85,18 +145,22 @@
         <option value="$PROJECT_DIR$/hansberry/gardens/tests/test_models.py" />
         <option value="$PROJECT_DIR$/hansberry/gardens/models.py" />
         <option value="$PROJECT_DIR$/hansberry/config/wsgi.py" />
-        <option value="$PROJECT_DIR$/../hansberry_project/hansberry/config/settings/base.py" />
         <option value="$PROJECT_DIR$/../hansberry_project/hansberry/config/settings/__init__.py" />
         <option value="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/apps.py" />
         <option value="$PROJECT_DIR$/../hansberry_project/hansberry/config/wsgi.py" />
         <option value="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/models.py" />
         <option value="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/tests/test_models.py" />
         <option value="$PROJECT_DIR$/../hansberry_project/hansberry/config/urls.py" />
-        <option value="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/urls.py" />
         <option value="$PROJECT_DIR$/../hansberry_project/hansberry/templates/base.html" />
         <option value="$PROJECT_DIR$/../hansberry_project/hansberry/templates/index.html" />
         <option value="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/views.py" />
+        <option value="$PROJECT_DIR$/../hansberry_project/hansberry/static/css/main.css" />
+        <option value="$PROJECT_DIR$/../hansberry_project/hansberry/config/settings/test.py" />
+        <option value="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/urls.py" />
+        <option value="$PROJECT_DIR$/../hansberry_project/hansberry/config/settings/base.py" />
+        <option value="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/tests/test_templates.py" />
         <option value="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/templates/gardens/index.html" />
+        <option value="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/static/gardens/css/main.css" />
         <option value="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/templates/gardens/base.html" />
       </list>
     </option>
@@ -149,15 +213,33 @@
               <item name="hansberry_project" type="462c0819:PsiDirectoryNode" />
               <item name="hansberry" type="462c0819:PsiDirectoryNode" />
               <item name="gardens" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hansberry" type="b2602c69:ProjectViewProjectNode" />
               <item name="hansberry_project" type="462c0819:PsiDirectoryNode" />
               <item name="hansberry" type="462c0819:PsiDirectoryNode" />
               <item name="gardens" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="gardens" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hansberry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hansberry_project" type="462c0819:PsiDirectoryNode" />
+              <item name="hansberry" type="462c0819:PsiDirectoryNode" />
+              <item name="gardens" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="gardens" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hansberry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hansberry_project" type="462c0819:PsiDirectoryNode" />
+              <item name="hansberry" type="462c0819:PsiDirectoryNode" />
+              <item name="gardens" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="gardens" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -172,9 +254,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/static/gardens/images" />
+      <recent name="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/static/gardens/css" />
+      <recent name="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/static/gardens" />
+      <recent name="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/static" />
       <recent name="$PROJECT_DIR$/../hansberry_project/hansberry/gardens" />
-      <recent name="$PROJECT_DIR$/../hansberry_project/hansberry/templates/gardens" />
-      <recent name="$PROJECT_DIR$/hansberry" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -245,9 +329,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="2162" y="23" width="1651" height="937" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32944787" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32944787" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897863" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -284,6 +367,9 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -407,21 +493,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/tests/test_views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/config/settings/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/config/settings/staging.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -500,22 +571,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/config/settings/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="36" column="25" lean-forward="true" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
-          <folding>
-            <element signature="e#308#317#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/config/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="49" lean-forward="false" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
           <folding>
-            <element signature="e#225#234#0" expanded="true" />
+            <element signature="e#225#234#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -536,24 +597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/config/settings/local.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/tests/test_models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1815">
@@ -569,41 +612,101 @@
         <state relative-caret-position="285">
           <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
           <folding>
-            <element signature="e#633#665#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#633#665#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="36" lean-forward="false" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/tests/test_models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/config/settings/local.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="9" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/config/settings/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/tests/test_views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/config/settings/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/tests/test_templates.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/templates/gardens/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        <state relative-caret-position="165">
+          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/static/gardens/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/templates/gardens/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="26" lean-forward="false" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+        <state relative-caret-position="525">
+          <caret line="43" column="303" lean-forward="false" selection-start-line="43" selection-start-column="303" selection-end-line="43" selection-end-column="303" />
           <folding />
         </state>
       </provider>
