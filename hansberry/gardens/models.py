@@ -107,7 +107,7 @@ class GardenAddress(models.Model):
     )
 
     def __str__(self):
-        return '%s, %s, %s %s'.format(self.address, self.zip_code.city, self.zip_code.city.state, self.zip_code)
+        return '{}, {}, {} {}'.format(self.address, self.zip_code.city, self.zip_code.city.state, self.zip_code)
 
 
 class Garden(TimeStampedModel):
@@ -118,7 +118,7 @@ class Garden(TimeStampedModel):
     garden_author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     description = models.CharField(max_length=300, null=True)
     name = models.CharField('name of garden', max_length=100)
-    slug = models.SlugField()
+    slug = models.SlugField('slug of garden', unique=True, blank=True, null=True)
     address = models.ForeignKey(
         GardenAddress,
         on_delete=models.CASCADE,

@@ -94,7 +94,7 @@ class GardenAddressModel(TestCase):
     def test_calling_gardenaddress_returns_formmattedd_address(self):
         """GardenAddress str method returns correctly formatted address"""
         gardenaddress = GardenAddress.objects.get(address='5150 Wayne Avenue')
-        formatted_address = '%s, %s, %s %s'.format(gardenaddress.address, self.city_philly, self.state_pa,
+        formatted_address = '{}, {}, {} {}'.format(gardenaddress.address, self.city_philly, self.state_pa,
                                                    self.zip_germantown)
         self.assertEquals(str(gardenaddress), formatted_address)
 
