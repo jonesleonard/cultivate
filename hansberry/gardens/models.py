@@ -5,6 +5,17 @@ from django.template.defaultfilters import slugify
 
 
 # Create your models here.
+class TimeStampedModel(models.Model):
+    """
+    An abstract base class model that provides self-updating 'created' and 'modified' fields.
+    """
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        abstract = True
+
+
 class GardenAddressType(models.Model):
     """
     Stores the type of address a garden address entry is, related to :model:'gardens.GardenAddress' and
@@ -99,17 +110,13 @@ class GardenAddress(models.Model):
         return '%s, %s, %s %s'.format(self.address, self.zip_code.city, self.zip_code.city.state, self.zip_code)
 
 
-class Garden(models.Model):
+class Garden(TimeStampedModel):
     """
     Stores a single Garden entry, related to :model:'gardens.GardenAddress',
     :model:'gardens.GardenAddressType'
     """
     garden_author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    description = models.CharField(max_length=300)
-    created_date = models.DateTimeField(verbose_name='date garden was created in database', auto_now_add=True,
-                                        name='date created')
-    timestamp = models.DateTimeField(verbose_name='last date the garden entry was updated', auto_now=True,
-                                     name='timestamp')
+    description = models.CharField(max_length=300, null=True)
     name = models.CharField('name of garden', max_length=100)
     slug = models.SlugField()
     address = models.ForeignKey(
