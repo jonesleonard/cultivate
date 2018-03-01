@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2ddebef-569d-436d-be92-71d562db6e26" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/static/gardens/images/sprout_icon.svg" />
       <change beforePath="$PROJECT_DIR$/../hansberry_project/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../hansberry_project/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/static/gardens/css/main.css" afterPath="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/static/gardens/css/main.css" />
+      <change beforePath="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/static/gardens/images/sprout_icon.png" afterPath="" />
       <change beforePath="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/templates/gardens/base.html" afterPath="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/templates/gardens/base.html" />
+      <change beforePath="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/templates/gardens/index.html" afterPath="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/templates/gardens/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,8 +45,18 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/templates/gardens/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="42" lean-forward="true" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+            <state relative-caret-position="450">
+              <caret line="30" column="29" lean-forward="true" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/static/gardens/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -74,19 +87,11 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/templates/gardens/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/static/gardens/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-              <folding />
+            <state relative-caret-position="300">
+              <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+              <folding>
+                <element signature="n#style#0;n#h5#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -151,9 +156,9 @@
         <option value="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/urls.py" />
         <option value="$PROJECT_DIR$/../hansberry_project/hansberry/config/settings/base.py" />
         <option value="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/tests/test_templates.py" />
-        <option value="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/templates/gardens/index.html" />
         <option value="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/templates/gardens/base.html" />
         <option value="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/static/gardens/css/main.css" />
+        <option value="$PROJECT_DIR$/../hansberry_project/hansberry/gardens/templates/gardens/index.html" />
       </list>
     </option>
   </component>
@@ -668,14 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/config/settings/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/tests/test_templates.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -694,27 +691,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/config/settings/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/static/gardens/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        <state relative-caret-position="240">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/templates/gardens/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="42" lean-forward="true" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+        <state relative-caret-position="450">
+          <caret line="30" column="29" lean-forward="true" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/templates/gardens/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding />
+        <state relative-caret-position="300">
+          <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#h5#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
