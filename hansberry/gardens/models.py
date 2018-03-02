@@ -125,8 +125,10 @@ class Garden(TimeStampedModel):
     name = models.CharField('name of garden', max_length=100)
     slug = models.SlugField(
         'slug of garden', unique=True, blank=True, null=True)
-    address = models.ManyToManyField(
+    address = models.ForeignKey(
         GardenAddress,
+        on_delete=models.CASCADE,
+        verbose_name='the related garden address',
     )
 
     def save(self, *args, **kwargs):
