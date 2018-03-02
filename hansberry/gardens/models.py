@@ -127,7 +127,6 @@ class Garden(TimeStampedModel):
         'slug of garden', unique=True, blank=True, null=True)
     address = models.ManyToManyField(
         GardenAddress,
-        verbose_name='the related garden address',
     )
 
     def save(self, *args, **kwargs):
