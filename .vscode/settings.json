@@ -1,0 +1,23 @@
+{
+    "python.pythonPath": "/Users/lendjones/.virtualenvs/hansberry_project-jpdu6CWE/bin/python",
+    "python.linting.pep8Enabled": true,
+    "python.linting.pylintPath": "/Users/lendjones/.virtualenvs/hansberry_project-jpdu6CWE/bin/pylint",
+    "python.linting.pylintArgs": [
+        "--load-plugins",
+        "pylint_django"
+    ],
+    "python.linting.pylintEnabled": true,
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "python.unitTest.unittestArgs": [
+        "-v",
+        "-s",
+        "./hansberry/gardens/tests",
+        "-p",
+        "test*.py"
+    ],
+    "python.unitTest.unittestEnabled": true,
+}

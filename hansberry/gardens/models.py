@@ -7,7 +7,8 @@ from django.template.defaultfilters import slugify
 # Create your models here.
 class TimeStampedModel(models.Model):
     """
-    An abstract base class model that provides self-updating 'created' and 'modified' fields.
+    An abstract base class model that provides self-updating 'created'
+    and 'modified' fields.
     """
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
@@ -18,8 +19,8 @@ class TimeStampedModel(models.Model):
 
 class GardenAddressType(models.Model):
     """
-    Stores the type of address a garden address entry is, related to :model:'gardens.GardenAddress' and
-    :model:'gardens.Garden',
+    Stores the type of address a garden address entry is, related to
+    :model:'gardens.GardenAddress' and :model:'gardens.Garden',
     """
     ADDRESS_PHYSICAL = 'py'
     ADDRESS_MAILING = 'ml'
@@ -44,7 +45,8 @@ class State(models.Model):
     """
     Stores a single US State entry
     """
-    short_name = models.CharField('state short name', max_length=2, primary_key=True)
+    short_name = models.CharField(
+        'state short name', max_length=2, primary_key=True)
     name = models.CharField('state full name', max_length=50)
 
     def save(self, *args, **kwargs):
@@ -91,8 +93,9 @@ class ZipCode(models.Model):
 
 class GardenAddress(models.Model):
     """
-    Stores a garden address entry tied to each garden, related to :model:'gardens.Garden',
-    :model:'gardens.GardenAddressType', and :model:'gardens.ZipCode'
+    Stores a garden address entry tied to each garden, related to
+    :model:'gardens.Garden', :model:'gardens.GardenAddressType',
+    and :model:'gardens.ZipCode'
     """
     address_type = models.ForeignKey(
         GardenAddressType,
@@ -107,7 +110,8 @@ class GardenAddress(models.Model):
     )
 
     def __str__(self):
-        return '{}, {}, {} {}'.format(self.address, self.zip_code.city, self.zip_code.city.state, self.zip_code)
+        return '{}, {}, {} {}'.format(self.address, self.zip_code.city,
+                                      self.zip_code.city.state, self.zip_code)
 
 
 class Garden(TimeStampedModel):
@@ -115,18 +119,16 @@ class Garden(TimeStampedModel):
     Stores a single Garden entry, related to :model:'gardens.GardenAddress',
     :model:'gardens.GardenAddressType'
     """
-    garden_author = models.ForeignKey('auth.User', on_delete=models.SET_NULL, null=True, blank=True)
+    garden_author = models.ForeignKey(
+        'auth.User', on_delete=models.SET_NULL, null=True, blank=True)
     description = models.CharField(max_length=300, null=True)
     name = models.CharField('name of garden', max_length=100)
-    slug = models.SlugField('slug of garden', unique=True, blank=True, null=True)
-    address = models.ForeignKey(
+    slug = models.SlugField(
+        'slug of garden', unique=True, blank=True, null=True)
+    address = models.ManyToManyField(
         GardenAddress,
-        on_delete=models.CASCADE,
         verbose_name='the related garden address',
     )
-
-    class Meta:
-        unique_together = (('address', 'name'),)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)

@@ -14,3 +14,6 @@ selenium = "*"
 
 "psycopg2" = "*"
 django = "*"
+"autopep8" = "*"
+pylint = "*"
+"pep8" = "*"

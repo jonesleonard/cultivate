@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Your gardens</h1>
+
+{% if garden_list %}
+<ul>
+    {% for garden in garden_list %}
+    <li>
+        <a href="#">
+            {{ garden.name }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% else %}
+    <p>You haven't created any gardens yet.</p>
+{% endif %}
+
+{% endblock %}
