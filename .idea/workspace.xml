@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2ddebef-569d-436d-be92-71d562db6e26" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_complete.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_confirm.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_done.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_email.html" />
       <change beforePath="$PROJECT_DIR$/../hansberry_project/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../hansberry_project/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/../hansberry_project/config/settings/local.py" afterPath="$PROJECT_DIR$/../hansberry_project/config/settings/local.py" />
-      <change beforePath="$PROJECT_DIR$/../hansberry_project/hansberry/templates/base.html" afterPath="$PROJECT_DIR$/../hansberry_project/hansberry/templates/base.html" />
+      <change beforePath="$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_confirm.html" afterPath="$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_confirm.html" />
+      <change beforePath="$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_done.html" afterPath="$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_done.html" />
       <change beforePath="$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_form.html" afterPath="$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_form.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.16053748">
+    <splitter split-orientation="horizontal" split-proportion="0.5240453">
       <split-first>
         <leaf>
           <file leaf-file-name="test_views.py" pinned="false" current-in-tab="true">
@@ -51,8 +47,8 @@
           <file leaf-file-name="password_reset_form.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_form.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="165">
-                  <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+                <state relative-caret-position="135">
+                  <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
                   <folding />
                 </state>
               </provider>
@@ -62,7 +58,7 @@
             <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_done.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="75">
-                  <caret line="5" column="14" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+                  <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
                   <folding />
                 </state>
               </provider>
@@ -78,7 +74,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="local.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="local.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/../hansberry_project/config/settings/local.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="60">
@@ -91,8 +87,8 @@
           <file leaf-file-name="password_reset_confirm.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_confirm.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="645">
-                  <caret line="43" column="14" lean-forward="false" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
                   <folding>
                     <element signature="n#style#0;n#div#0;n#form#0;n#!!top" expanded="true" />
                   </folding>
@@ -100,7 +96,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="password_reset_complete.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="password_reset_complete.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_complete.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="105">
@@ -189,13 +185,13 @@
         <option value="$PROJECT_DIR$/../hansberry_project/config/settings/base.py" />
         <option value="$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/logout.html" />
         <option value="$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/logged_out.html" />
-        <option value="$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_form.html" />
-        <option value="$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_done.html" />
         <option value="$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_email.html" />
-        <option value="$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_confirm.html" />
         <option value="$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_complete.html" />
         <option value="$PROJECT_DIR$/../hansberry_project/hansberry/templates/base.html" />
         <option value="$PROJECT_DIR$/../hansberry_project/config/settings/local.py" />
+        <option value="$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_form.html" />
+        <option value="$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_done.html" />
+        <option value="$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_confirm.html" />
       </list>
     </option>
   </component>
@@ -756,48 +752,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_done.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="14" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_email.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="86" lean-forward="false" selection-start-line="3" selection-start-column="86" selection-end-line="3" selection-end-column="86" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_confirm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="14" lean-forward="false" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_complete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="14" lean-forward="false" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/gardens/templates/gardens/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -818,6 +772,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="37" lean-forward="false" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_done.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_email.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="86" lean-forward="false" selection-start-line="3" selection-start-column="86" selection-end-line="3" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_confirm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../hansberry_project/hansberry/templates/registration/password_reset_complete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="14" lean-forward="false" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
           <folding />
         </state>
       </provider>
