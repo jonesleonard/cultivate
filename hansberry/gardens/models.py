@@ -115,7 +115,7 @@ class Garden(TimeStampedModel):
     Stores a single Garden entry, related to :model:'gardens.GardenAddress',
     :model:'gardens.GardenAddressType'
     """
-    garden_author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    garden_author = models.ForeignKey('auth.User', on_delete=models.SET_NULL, null=True, blank=True)
     description = models.CharField(max_length=300, null=True)
     name = models.CharField('name of garden', max_length=100)
     slug = models.SlugField('slug of garden', unique=True, blank=True, null=True)
