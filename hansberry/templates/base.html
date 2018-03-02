@@ -2,61 +2,75 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
 
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="A place to manage your community garden.">
-        <meta name="keywords" content="garden,community,community garden, gardening, manage garden">
-        <meta name="author" content="Leonard Jones">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A place to manage your community garden.">
+    <meta name="keywords" content="garden,community,community garden, gardening, manage garden">
+    <meta name="author" content="Leonard Jones">
 
-        <title>{% block title %}garden{% endblock %}</title>
+    <title>{% block title %}garden{% endblock %}</title>
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-        <!-- Custom CSS -->
-        <link href="{% static 'gardens/css/main.css' %}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{% static 'gardens/css/main.css' %}" rel="stylesheet">
 
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito|Pacifico" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Pacifico" rel="stylesheet">
 
-    </head>
-    <body>
-        <div id="wrapper">
-            <div id="header">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <a class="navbar-brand" href="{% url 'index' %}">
-                        <img src="{% static 'gardens/images/sprout_icon.svg' %}" width="30" height="30" class="d-inline-block align-top" alt="cultivate icon">
-                        cultivate
-                    </a>
-                    <form class="form-inline">
-                        <button class="btn btn-outline-primary mr-sm-2" type="button">Log In</button>
-                        <button class="btn btn-outline-success" type="button">Sign Up</button>
-                    </form>
-                </nav>
-            </div>
-        </div>
+</head>
+<body>
+<div id="wrapper">
+    <div id="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'index' %}">
+                <img src="{% static 'gardens/images/sprout_icon.svg' %}" width="30" height="30"
+                     class="d-inline-block align-top" alt="cultivate icon">
+                cultivate
+            </a>
+            <form class="form-inline">
+                <a href="{% url 'login' %}">
+                    <button class="btn btn-outline-primary mr-sm-2" type="button">Log In</button>
+                </a>
+                <button class="btn btn-outline-success" type="button">Sign Up</button>
+            </form>
+        </nav>
+    </div>
+</div>
 
-        <div id="content">
-            {% block content %}
-            {% endblock %}
-        </div>
+<div id="content">
+    {% block content %}
+    {% endblock %}
+</div>
 
-        <!-- Icon attribution -->
-        <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+<!-- Icon attribution -->
+<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"
+                                                                                        title="Flaticon">www.flaticon.com</a>
+    is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
+                      target="_blank">CC 3.0 BY</a></div>
 
-        <!-- Javascript - at the end of the doc to load faster -->
-        <!-- JQuery, Popper, and Bootstrap -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- Javascript - at the end of the doc to load faster -->
+<!-- JQuery, Popper, and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
-        <!-- Font Awesome -->
-        <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+<!-- Font Awesome -->
+<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
-    </body>
+</body>
 </html>
