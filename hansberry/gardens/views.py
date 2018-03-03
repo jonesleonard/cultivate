@@ -10,7 +10,7 @@ def index(request):
     return render(request, 'gardens/index.html')
 
 
-class GardensCreatedByUserListView(LoginRequiredMixin, ListView):
+class GardensOwnerListView(LoginRequiredMixin, ListView):
     """
     Generic class-based view listing gardens created by current user.
     """

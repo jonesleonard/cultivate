@@ -49,13 +49,13 @@ class State(models.Model):
         'state short name', max_length=2, primary_key=True)
     name = models.CharField('state full name', max_length=50)
 
+    def __str__(self):
+        return self.name
+
     def save(self, *args, **kwargs):
         self.short_name = self.short_name.upper()
         self.name = self.name.title()
         super(State, self).save(*args, **kwargs)
-
-    def __str__(self):
-        return self.name
 
 
 class City(models.Model):
@@ -129,11 +129,16 @@ class Garden(TimeStampedModel):
         GardenAddress,
         on_delete=models.CASCADE,
         verbose_name='the related garden address',
+        null=True,
+        blank=True
     )
+
+    class Meta:
+        ordering = ['name']
+
+    def __str__(self):
+        return self.name
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
         super(Garden, self).save(*args, **kwargs)
-
-    def __str__(self):
-        return self.name

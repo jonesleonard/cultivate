@@ -1,16 +1,19 @@
 {
     "python.pythonPath": "/Users/lendjones/.virtualenvs/hansberry_project-jpdu6CWE/bin/python",
     "python.linting.pep8Enabled": true,
+    "python.linting.pep8Args": [
+        "--max-line-length=119",
+    ],
     "python.linting.pylintPath": "/Users/lendjones/.virtualenvs/hansberry_project-jpdu6CWE/bin/pylint",
     "python.linting.pylintArgs": [
         "--load-plugins",
-        "pylint_django"
+        "pylint_django",
+        "--max-line-length=119"
     ],
     "python.linting.pylintEnabled": true,
     "editor.formatOnSave": true,
     "editor.rulers": [
-        80,
-        120
+        119,
     ],
     "python.unitTest.unittestArgs": [
         "-v",
