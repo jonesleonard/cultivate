@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% load static %}
+
+{% block content %}
+<h1>Name: {{ garden.name }}</h1>
+
+<p>
+    <strong>Owner: </strong>
+    <a href="">{{ garden.garden_author }}</a>
+</p>
+{% if garden.description %}
+<p><strong>Description: </strong>{{ garden.description }}</p>
+{% else %}
+<p><strong>Description: </strong>This garden doesn't have a description yet.</p>
+{% endif %}
+{% if garden.address %}
+<p><strong>Address: </strong>{{ garden.address }}</p>
+{% else %}
+<p><strong>Address: </strong>This garden doesn't have an address yet.</p>
+{% endif %}
+
+{% endblock %}

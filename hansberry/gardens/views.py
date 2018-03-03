@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from hansberry.gardens.models import Garden
 
 # Create your views here.
@@ -20,3 +20,10 @@ class GardensOwnerListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         return Garden.objects.filter(garden_author=self.request.user)
+
+
+class GardenDetailView(DetailView):
+    """
+    Generic class-based view that displays information about a garden
+    """
+    model = Garden

@@ -11,7 +11,7 @@
         "--max-line-length=119"
     ],
     "python.linting.pylintEnabled": true,
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.rulers": [
         119,
     ],

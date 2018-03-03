@@ -9,6 +9,7 @@ urlpatterns = [
     path(r'', views.index, name='index'),
     path('mygardens/', views.GardensOwnerListView.as_view(),
          name='my-gardens'),
+    path('<int:pk>', views.GardenDetailView.as_view(), name='garden-detail'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

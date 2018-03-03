@@ -115,3 +115,120 @@ class GardenOwnerListViewTest(TestCase):
         resp = self.client.get(url)
         self.assertEqual(resp.status_code, 200)
         self.assertEqual(len(resp.context['object_list']), 3)
+
+
+class GardenDetailViewTest(TestCase):
+    def setUp(self):
+        # create credentials
+        self.credentials = {
+            'username': 'testuser',
+            'password': 'secret',
+        }
+        # create user
+        User.objects.create_user(**self.credentials)
+
+        # create garden with address
+        self.state_pa, created = State.objects.get_or_create(
+            short_name='PA', name='Pennsylvania')
+        self.city_philly, created = City.objects.get_or_create(
+            name='Philadelphia', state=self.state_pa)
+        self.zip_germantown, created = ZipCode.objects.get_or_create(
+            code='19144', city=self.city_philly)
+        self.gardenaddresstype_py, created = GardenAddressType.objects.get_or_create(
+            address_type='py')
+        self.gardenaddress_hansberry, created = GardenAddress.objects.get_or_create(
+            address_type=self.gardenaddresstype_py,
+            address='5150 Wayne Avenue',
+            zip_code=self.zip_germantown
+        )
+        self.hansberry_garden, created = Garden.objects.get_or_create(
+            name='Hansberry Garden and Nature Center',
+            address=self.gardenaddress_hansberry,
+            description='great garden and delicious veggies')
+
+    def test_view_url_accessible_by_name(self):
+        url = reverse('garden-detail', args=(self.hansberry_garden.pk,))
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+
+    def test_view_uses_correct_template(self):
+        url = reverse('garden-detail', args=(self.hansberry_garden.pk,))
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+        self.assertTemplateUsed(resp, 'gardens/garden_detail.html')
+
+    def test_view_returns_garden_name(self):
+        url = reverse('garden-detail', args=(self.hansberry_garden.pk,))
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, self.hansberry_garden.name)
+    
+    def test_view_returns_garden_description(self):
+        url = reverse('garden-detail', args=(self.hansberry_garden.pk,))
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, self.hansberry_garden.description)
+
+    def test_view_returns_garden_address(self):
+        url = reverse('garden-detail', args=(self.hansberry_garden.pk,))
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, self.hansberry_garden.address)
+
+    def test_view_returns_garden_404(self):
+        url = reverse('garden-detail', args=(self.hansberry_garden.pk+1,))
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 404)
+
+    def test_view_returns_no_description_msg(self):
+        test_garden = Garden.objects.create(name='Test Garden')
+        url = reverse('garden-detail', args=(test_garden.pk,))
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, 'This garden doesn\'t have a description yet.')
+
+    def test_view_returns_no_address_msg(self):
+        test_garden = Garden.objects.create(name='Test Garden')
+        url = reverse('garden-detail', args=(test_garden.pk,))
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, 'This garden doesn\'t have an address yet.')
+
+    def test_view_no_address_has_description(self):
+        test_garden = Garden.objects.create(name='Test Garden', description='test description')
+        url = reverse('garden-detail', args=(test_garden.pk,))
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, test_garden.description)
+        self.assertContains(resp, 'This garden doesn\'t have an address yet.')
+        self.assertNotContains(resp, 'This garden doesn\'t have a description yet.')
+
+    def test_view_no_description_has_address(self):
+        test_garden = Garden.objects.create(name='Test Garden', address=self.gardenaddress_hansberry)
+        url = reverse('garden-detail', args=(test_garden.pk,))
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, test_garden.address)
+        self.assertContains(resp, 'This garden doesn\'t have a description yet.')
+        self.assertNotContains(resp, 'This garden doesn\'t have an address yet.')
+
+    def test_view_displays_name(self):
+        test_garden = Garden.objects.create(name='Test Garden')
+        url = reverse('garden-detail', args=(test_garden.pk,))
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, test_garden.name)
+
+    def test_view_displays_owner(self):
+        test_garden = Garden.objects.create(name='Test Garden')
+        test_garden.garden_author = User.objects.get(username='testuser')
+        test_garden.save()
+        url = reverse('garden-detail', args=(test_garden.pk,))
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, test_garden.garden_author)
+
+
+    
+
+
