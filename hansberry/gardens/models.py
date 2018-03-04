@@ -3,6 +3,11 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.template.defaultfilters import slugify
+from localflavor.us.us_states import STATE_CHOICES
+from localflavor.us.models import USStateField
+from localflavor.us.models import USZipCodeField
+from localflavor.us.models import USPS_CHOICES
+from localflavor.us.models import USPostalCodeField
 
 
 # Create your models here.
@@ -53,7 +58,11 @@ class GardenAddress(models.Model):
         on_delete=models.CASCADE,
         verbose_name='the related address type',
     )
-    address = models.CharField('street address', max_length=255, blank=True)
+    address = models.CharField('street address', max_length=50)
+    city = models.CharField('city', max_length=100)
+    state = USStateField(choices=STATE_CHOICES)
+    usps_code = USPostalCodeField(choices=USPS_CHOICES)
+    zip_code = USZipCodeField('zip code')
 
 
 class Garden(TimeStampedModel):
