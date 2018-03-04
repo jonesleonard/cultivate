@@ -1,5 +1,6 @@
 from django.test import TestCase
 from django.db import IntegrityError
+from django.template.defaultfilters import slugify
 
 from hansberry.gardens.models import (
     Garden, GardenAddress)
@@ -54,6 +55,13 @@ class GardenModelTest(TestCase):
         # This will also fail if the urlconf is not defined.
         garden_pk = self.garden.pk
         self.assertEqual(self.garden.get_absolute_url(), '/{}'.format(garden_pk))
+
+    def test_slug_field_save(self):
+        garden_pk = self.garden.pk
+        slugified_name = slugify(self.garden.name)
+        formatted_slug = "{}-{}".format(slugified_name, garden_pk)
+        self.garden.save()
+        self.assertEqual(self.garden.slug, formatted_slug)
 
 
 class GardenAddressModelTest(TestCase):

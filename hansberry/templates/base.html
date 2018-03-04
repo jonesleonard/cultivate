@@ -54,6 +54,19 @@
 </div>
 
 <div id="content">
+    <!-- Displays any messages when creating or updating a Garden object -->
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li id="message_{{ forloop.counter }}"
+                {% if message.tags %} class="{{ message.tags }}"
+                    {% endif %}>
+                {{ message }}
+            </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <!-- Content Block -->
     {% block content %}
     {% endblock %}
 

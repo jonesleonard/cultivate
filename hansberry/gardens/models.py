@@ -23,6 +23,32 @@ class TimeStampedModel(models.Model):
         abstract = True
 
 
+class Garden(TimeStampedModel):
+    """
+    Stores a single Garden entry, related to :model:'gardens.GardenAddress',
+    :model:'gardens.GardenAddressType'
+    """
+    name = models.CharField('name', max_length=100)
+    created_by = models.ForeignKey(
+        'auth.User', on_delete=models.SET_NULL, null=True, blank=True)
+    description = models.CharField(max_length=300, blank=True)
+    slug = models.SlugField(
+        'slug of garden', unique=True, blank=True, null=True)
+
+    class Meta:
+        ordering = ['name']
+
+    def __str__(self):
+        return self.name
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify("{garden.name}-{garden.pk}".format(garden=self))
+        super(Garden, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('garden-detail', kwargs={'pk': self.pk})
+
+
 class GardenAddress(models.Model):
     """
     Stores a garden address entry tied to each garden, related to
@@ -43,6 +69,13 @@ class GardenAddress(models.Model):
         choices=ADDRESS_CHOICES,
         default=ADDRESS_PHYSICAL
     )
+    garden = models.ForeignKey(
+        Garden,
+        on_delete=models.CASCADE,
+        verbose_name='garden',
+        null=True,
+        blank=True
+    )
     address = models.CharField('street address', max_length=50)
     city = models.CharField('city', max_length=100)
     state = USStateField('state', choices=STATE_CHOICES)
@@ -57,34 +90,3 @@ class GardenAddress(models.Model):
         )
 
 
-class Garden(TimeStampedModel):
-    """
-    Stores a single Garden entry, related to :model:'gardens.GardenAddress',
-    :model:'gardens.GardenAddressType'
-    """
-    name = models.CharField('name', max_length=100)
-    created_by = models.ForeignKey(
-        'auth.User', on_delete=models.SET_NULL, null=True, blank=True)
-    description = models.CharField(max_length=300, blank=True)
-    slug = models.SlugField(
-        'slug of garden', unique=True, blank=True, null=True)
-    address = models.ForeignKey(
-        GardenAddress,
-        on_delete=models.CASCADE,
-        verbose_name='address',
-        null=True,
-        blank=True
-    )
-
-    class Meta:
-        ordering = ['name']
-
-    def __str__(self):
-        return self.name
-
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
-        super(Garden, self).save(*args, **kwargs)
-
-    def get_absolute_url(self):
-        return reverse('garden-detail', kwargs={'pk': self.pk})

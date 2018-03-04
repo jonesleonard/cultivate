@@ -1,10 +1,11 @@
 from django.test import TestCase, TransactionTestCase
-from hansberry.gardens.models import Garden, GardenAddress
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.utils import timezone
 from datetime import date, datetime
 from django.test import Client
+from hansberry.gardens.models import Garden, GardenAddress
+from hansberry.gardens.views import GardenOwnerListView
 
 
 class IndexViewTests(TestCase):
@@ -92,6 +93,10 @@ class GardenOwnerListViewTest(TestCase):
         self.assertEqual(resp.status_code, 200)
         self.assertEqual(len(resp.context['object_list']), 3)
 
+    def test_paginate_number(self):
+        login = self.client.login(username='testuser', password='secret')
+        self.assertEqual(GardenOwnerListView.paginate_by, 10)
+
 
 class GardenDetailViewTest(TestCase):
     def setUp(self):
@@ -155,7 +160,8 @@ class GardenDetailViewTest(TestCase):
         url = reverse('garden-detail', args=(self.test_garden.pk,))
         resp = self.client.get(url)
         self.assertEqual(resp.status_code, 200)
-        self.assertContains(resp, 'This garden doesn\'t have a description yet.')
+        self.assertContains(
+            resp, 'This garden doesn\'t have a description yet.')
 
     def test_view_returns_no_address_msg(self):
         url = reverse('garden-detail', args=(self.test_garden.pk,))
@@ -171,7 +177,8 @@ class GardenDetailViewTest(TestCase):
         self.assertEqual(resp.status_code, 200)
         self.assertContains(resp, self.test_garden.description)
         self.assertContains(resp, 'This garden doesn\'t have an address yet.')
-        self.assertNotContains(resp, 'This garden doesn\'t have a description yet.')
+        self.assertNotContains(
+            resp, 'This garden doesn\'t have a description yet.')
 
     def test_view_no_description_has_address(self):
         self.test_garden.address = self.test_garden_address
@@ -180,8 +187,10 @@ class GardenDetailViewTest(TestCase):
         resp = self.client.get(url)
         self.assertEqual(resp.status_code, 200)
         self.assertContains(resp, self.test_garden.address)
-        self.assertContains(resp, 'This garden doesn\'t have a description yet.')
-        self.assertNotContains(resp, 'This garden doesn\'t have an address yet.')
+        self.assertContains(
+            resp, 'This garden doesn\'t have a description yet.')
+        self.assertNotContains(
+            resp, 'This garden doesn\'t have an address yet.')
 
     def test_view_displays_name(self):
         url = reverse('garden-detail', args=(self.test_garden.pk,))
@@ -196,3 +205,57 @@ class GardenDetailViewTest(TestCase):
         resp = self.client.get(url)
         self.assertEqual(resp.status_code, 200)
         self.assertContains(resp, self.test_garden.created_by)
+
+
+class GardenCreateViewTest(TestCase):
+    def setUp(self):
+        # create credentials
+        self.credentials = {
+            'username': 'testuser',
+            'password': 'secret',
+        }
+        # create user
+        User.objects.create_user(**self.credentials)
+
+        # create test gardens
+        self.test_garden = Garden.objects.create(name='Test Garden')
+        # create test garden address
+        self.test_garden_address = GardenAddress.objects.create(
+            address='13000 Main Street',
+            city='Philadelphia',
+            state='PA',
+            zip_code='19144'
+        )
+        self.test_garden.save()
+
+    def test_redirect_if_not_logged_in(self):
+        url = reverse('garden-create')
+        resp = self.client.get(url)
+        self.assertRedirects(resp, '/accounts/login/?next=/create/')
+
+    def test_view_accessible_by_name(self):
+        login = self.client.login(username='testuser', password='secret')
+        url = reverse('garden-create')
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+
+    def test_view_uses_correct_template(self):
+        login = self.client.login(username='testuser', password='secret')
+        url = reverse('garden-create')
+        resp = self.client.get(url)
+        self.assertTemplateUsed(resp, 'gardens/garden_form.html')
+
+    def test_form_invalid_no_name(self):
+        login = self.client.login(username='testuser', password='secret')
+        url = reverse('garden-create')
+        resp = self.client.post(url, {})
+        self.assertFormError(resp, 'form', 'name', 'This field is required.')
+
+    def test_form_invalid_when_same_name_and_address(self):
+        login = self.client.login(username='testuser', password='secret')
+        url = reverse('garden-create')
+        resp = self.client.post(
+            url,
+            {'name': 'Test Garden', 'address': self.test_garden_address}
+        )
+        self.assertFormError(resp, 'form', 'address', 'Sorry, a garden with this name and address already exists.')

@@ -4,6 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import CreateView, DetailView, DeleteView, ListView, UpdateView
 from django.urls import reverse_lazy
 from hansberry.gardens.models import Garden
+from hansberry.gardens.forms import GardenForm
 
 # Create your views here.
 
@@ -14,24 +15,19 @@ def index(request):
 
 class GardenActionMixin:
     """
-    Mixin that queues up a confirmation message corresponding
-    to the action performed in a view as well as capturing
-    the user who created the form instance.
+    Makes the request.user object available
     """
 
-    fields = ['name', 'description', 'address']
-
-    @property
-    def success_msg(self):
-        return NotImplemented
-    
-    def form_valid(self, form):
-        messages.info(self.request, self.success_msg)
-        form.instance.created_by = self.request.user
-        return super(GardenActionMixin, self).form_valid(form)
+    def get_form_kwargs(self):
+        """This method injects forms with keyword args."""
+        # grab the current set of form #kwargs
+        kwargs = super(GardenActionMixin, self).get_form_kwargs()
+        # Update the kwargs with the user_id
+        kwargs['user'] = self.request.user
+        return kwargs
 
 
-class GardensOwnerListView(LoginRequiredMixin, ListView):
+class GardenOwnerListView(LoginRequiredMixin, ListView):
     """
     Generic class-based view listing gardens created by current user.
     """
@@ -56,7 +52,7 @@ class GardenCreateView(LoginRequiredMixin, GardenActionMixin, CreateView):
     to create a garden and displays a success message
     """
     model = Garden
-    success_msg = 'Garden created!'
+    form_class = GardenForm
 
 
 class GardenUpdateView(LoginRequiredMixin, GardenActionMixin, UpdateView):
@@ -65,15 +61,13 @@ class GardenUpdateView(LoginRequiredMixin, GardenActionMixin, UpdateView):
     to update a garden and displays a success message
     """
     model = Garden
-    success_msg = 'Garden updated!'
+    form_class = GardenForm
 
 
-class GardenDeleteView(LoginRequiredMixin, GardenActionMixin, DeleteView):
+class GardenDeleteView(LoginRequiredMixin, DeleteView):
     """
     Generic class-based view that allows a logged in user
     to delete a garden and displays a success message
     """
     model = Garden
-    success_msg = 'Garden deleted!'
     success_url = reverse_lazy('my-gardens')
-
