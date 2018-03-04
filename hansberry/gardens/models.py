@@ -23,10 +23,11 @@ class TimeStampedModel(models.Model):
         abstract = True
 
 
-class GardenAddressType(models.Model):
+class GardenAddress(models.Model):
     """
-    Stores the type of address a garden address entry is, related to
-    :model:'gardens.GardenAddress' and :model:'gardens.Garden',
+    Stores a garden address entry tied to each garden, related to
+    :model:'gardens.Garden', :model:'gardens.GardenAddressType',
+    and :model:'gardens.ZipCode'
     """
     ADDRESS_PHYSICAL = 'py'
     ADDRESS_MAILING = 'ml'
@@ -42,27 +43,18 @@ class GardenAddressType(models.Model):
         choices=ADDRESS_CHOICES,
         default=ADDRESS_PHYSICAL
     )
-
-    def __str__(self):
-        return self.get_address_type_display()
-
-
-class GardenAddress(models.Model):
-    """
-    Stores a garden address entry tied to each garden, related to
-    :model:'gardens.Garden', :model:'gardens.GardenAddressType',
-    and :model:'gardens.ZipCode'
-    """
-    address_type = models.ForeignKey(
-        GardenAddressType,
-        on_delete=models.CASCADE,
-        verbose_name='the related address type',
-    )
     address = models.CharField('street address', max_length=50)
     city = models.CharField('city', max_length=100)
-    state = USStateField(choices=STATE_CHOICES)
-    usps_code = USPostalCodeField(choices=USPS_CHOICES)
+    state = USStateField('state', choices=STATE_CHOICES)
     zip_code = USZipCodeField('zip code')
+
+    class Meta:
+        ordering = ['address_type', 'city']
+
+    def __str__(self):
+        return '{}, {}, {} {}'.format(
+            self.address, self.city, self.state, self.zip_code
+        )
 
 
 class Garden(TimeStampedModel):
@@ -70,16 +62,16 @@ class Garden(TimeStampedModel):
     Stores a single Garden entry, related to :model:'gardens.GardenAddress',
     :model:'gardens.GardenAddressType'
     """
-    name = models.CharField('name of garden', max_length=100)
+    name = models.CharField('name', max_length=100)
     created_by = models.ForeignKey(
         'auth.User', on_delete=models.SET_NULL, null=True, blank=True)
-    description = models.CharField(max_length=300, null=True)
+    description = models.CharField(max_length=300, blank=True)
     slug = models.SlugField(
         'slug of garden', unique=True, blank=True, null=True)
     address = models.ForeignKey(
         GardenAddress,
         on_delete=models.CASCADE,
-        verbose_name='the related garden address',
+        verbose_name='address',
         null=True,
         blank=True
     )
