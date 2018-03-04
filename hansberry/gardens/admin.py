@@ -5,6 +5,3 @@ from .models import *
 admin.site.register(Garden)
 admin.site.register(GardenAddress)
 admin.site.register(GardenAddressType)
-admin.site.register(State)
-admin.site.register(City)
-admin.site.register(ZipCode)

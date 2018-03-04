@@ -1,3 +1,4 @@
+from django.urls import reverse
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
@@ -41,56 +42,6 @@ class GardenAddressType(models.Model):
         return self.get_address_type_display()
 
 
-class State(models.Model):
-    """
-    Stores a single US State entry
-    """
-    short_name = models.CharField(
-        'state short name', max_length=2, primary_key=True)
-    name = models.CharField('state full name', max_length=50)
-
-    def __str__(self):
-        return self.name
-
-    def save(self, *args, **kwargs):
-        self.short_name = self.short_name.upper()
-        self.name = self.name.title()
-        super(State, self).save(*args, **kwargs)
-
-
-class City(models.Model):
-    """
-    Stores a single US City entry, related to :model:'gardens.State'
-    """
-    name = models.CharField('city name', max_length=100)
-    state = models.ForeignKey(
-        State,
-        on_delete=models.CASCADE,
-        verbose_name='the related state',
-    )
-
-    def __str__(self):
-        return self.name
-
-
-class ZipCode(models.Model):
-    """
-    Stores zip code data, related to :model:'gardens.city'
-    """
-    code = models.CharField('zip code', max_length=6)
-    city = models.ForeignKey(
-        City,
-        on_delete=models.CASCADE,
-        verbose_name='the related city',
-    )
-
-    class Meta:
-        unique_together = (('code', 'city'),)
-
-    def __str__(self):
-        return self.code
-
-
 class GardenAddress(models.Model):
     """
     Stores a garden address entry tied to each garden, related to
@@ -103,15 +54,6 @@ class GardenAddress(models.Model):
         verbose_name='the related address type',
     )
     address = models.CharField('street address', max_length=255, blank=True)
-    zip_code = models.ForeignKey(
-        ZipCode,
-        on_delete=models.CASCADE,
-        verbose_name='the related zip code',
-    )
-
-    def __str__(self):
-        return '{}, {}, {} {}'.format(self.address, self.zip_code.city,
-                                      self.zip_code.city.state, self.zip_code)
 
 
 class Garden(TimeStampedModel):
@@ -119,10 +61,10 @@ class Garden(TimeStampedModel):
     Stores a single Garden entry, related to :model:'gardens.GardenAddress',
     :model:'gardens.GardenAddressType'
     """
-    garden_author = models.ForeignKey(
+    name = models.CharField('name of garden', max_length=100)
+    created_by = models.ForeignKey(
         'auth.User', on_delete=models.SET_NULL, null=True, blank=True)
     description = models.CharField(max_length=300, null=True)
-    name = models.CharField('name of garden', max_length=100)
     slug = models.SlugField(
         'slug of garden', unique=True, blank=True, null=True)
     address = models.ForeignKey(
@@ -142,3 +84,6 @@ class Garden(TimeStampedModel):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
         super(Garden, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('garden-detail', kwargs={'pk': self.pk})

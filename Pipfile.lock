@@ -1,19 +1,19 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "2ff9f0389f8d6b3f625b2a99d623a0d526866108143873a12b60d035e21ceec2"
+            "sha256": "6c18f0ebe0ae92635a77a905f7b83e8ff0e1fa5d79095043257ca0f9f4413d42"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
-            "implementation_version": "0",
+            "implementation_version": "3.6.3",
             "os_name": "posix",
             "platform_machine": "x86_64",
             "platform_python_implementation": "CPython",
             "platform_release": "17.4.0",
             "platform_system": "Darwin",
             "platform_version": "Darwin Kernel Version 17.4.0: Sun Dec 17 09:19:54 PST 2017; root:xnu-4570.41.2~1/RELEASE_X86_64",
-            "python_full_version": "2.7.10",
-            "python_version": "2.7",
+            "python_full_version": "3.6.3",
+            "python_version": "3.6",
             "sys_platform": "darwin"
         },
         "pipfile-spec": 6,
@@ -57,10 +57,17 @@
         },
         "django": {
             "hashes": [
-                "sha256:ac4c797a328a5ac8777ad61bcd00da279773455cc78b4058de2a9842a0eb6ee8",
-                "sha256:22383567385a9c406d8a5ce080a2694c82c6b733e157922197e8b393bb3aacd9"
+                "sha256:7c8ff92285406fb349e765e9ade685eec7271d6f5c3f918e495a74768b765c99",
+                "sha256:dc3b61d054f1bced64628c62025d480f655303aea9f408e5996c339a543b45f0"
             ],
-            "version": "==1.11.10"
+            "version": "==2.0.2"
+        },
+        "django-localflavor": {
+            "hashes": [
+                "sha256:50d7b694c9851224c352dba9cac63879343be8bd2f86f6b8e1465de53da34c90",
+                "sha256:d9cde0b531c0d33f9d22e90a0bf27f56a8394c6a68e68cacdc03942a797b2aff"
+            ],
+            "version": "==2.0"
         },
         "enum34": {
             "hashes": [
@@ -74,10 +81,10 @@
         },
         "futures": {
             "hashes": [
-                "sha256:ec0a6cb848cc212002b9828c3e34c675e0c9ff6741dc445cab6fdd4e1085d1f1",
-                "sha256:9ec02aa7d674acb8618afb127e27fde7fc68994c0437ad759fa094a574adb265"
+                "sha256:c4884a65654a7c45435063e14ae85280eb1f111d94e542396717ba9828c4337f",
+                "sha256:51ecb45f0add83c806c68e4b06106f90db260585b25ef2abfcda0bd95c0132fd"
             ],
-            "version": "==3.2.0"
+            "version": "==3.1.1"
         },
         "isort": {
             "hashes": [
